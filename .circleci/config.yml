@@ -18,5 +18,4 @@ workflows:
     jobs:
       - sleep:
           name: "sleep 1"
-          parameters:
-            duration: 1h1m
+          duration: 1h1m
