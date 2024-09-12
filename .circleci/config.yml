@@ -20,4 +20,6 @@ workflows:
           name: "sleep 1"
       - sleep:
           name: "sleep 2"
+          requires: 
+            - "sleep 1"
 
