@@ -8,6 +8,7 @@ jobs:
         type: string
     docker:
       - image: cimg/go:1.23
+    resource_class: small
     steps:
       - checkout
       - run: go run ./cmd/nothing-to-do <<parameters.duration>>
