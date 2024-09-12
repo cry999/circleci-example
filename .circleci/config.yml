@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  sleep:
+    parameters:
+      duration:
+        default: "45m"
+        type: string
+    docker:
+      - image: cimg/go:1.23
+    steps:
+      - run: go run ./cmd/nothing-to-do <<parameters.duration>>
+
+workflows:
+  check:
+    jobs:
+      - sleep
+      - sleep
