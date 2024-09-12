@@ -9,11 +9,11 @@ jobs:
     docker:
       - image: cimg/go:1.23
     steps:
+      - checkout
       - run: go run ./cmd/nothing-to-do <<parameters.duration>>
 
 workflows:
   check:
     jobs:
-      - checkout
       - sleep
       - sleep
