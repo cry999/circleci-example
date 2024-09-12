@@ -16,5 +16,8 @@ jobs:
 workflows:
   check:
     jobs:
-      - sleep
-      - sleep
+      - sleep:
+          name: "sleep 1"
+      - sleep:
+          name: "sleep 2"
+
