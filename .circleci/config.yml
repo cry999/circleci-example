@@ -11,7 +11,10 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - run: go run ./cmd/nothing-to-do <<parameters.duration>>
+      - run: 
+          name: Sleep <<parameters.duration>>
+          command: go run ./cmd/nothing-to-do <<parameters.duration>>
+          background: true
   fail:
     docker:
       - image: cimg/go:1.23
