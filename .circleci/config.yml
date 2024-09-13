@@ -12,10 +12,14 @@ jobs:
     steps:
       - checkout
       - run: go run ./cmd/nothing-to-do <<parameters.duration>>
+  fail:
+    steps:
+      - run: exit 1
 
 workflows:
   check:
     jobs:
+      - fail
       - sleep:
           name: "sleep 1"
-          duration: 1h1m
+          duration: 1s
