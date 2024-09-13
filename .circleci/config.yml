@@ -25,3 +25,5 @@ workflows:
       - sleep:
           name: "sleep 1"
           duration: 1s
+          requires:
+            - fail
