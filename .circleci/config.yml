@@ -13,6 +13,8 @@ jobs:
       - checkout
       - run: go run ./cmd/nothing-to-do <<parameters.duration>>
   fail:
+    docker:
+      - image: cimg/go:1.23
     steps:
       - run: exit 1
 
